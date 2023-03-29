@@ -1,0 +1,7 @@
+CREATE TABLE tbbarang (
+  id_brg int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nama_barang varchar(25) NOT NULL,
+  harga int(11) NOT NULL,
+  stok int(11) NOT NULL,
+  gambar varchar(50) NOT NULL
+);

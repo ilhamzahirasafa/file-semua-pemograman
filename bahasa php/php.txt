@@ -1,0 +1,53 @@
+<?php 
+//nama file = tampil_barang.php
+
+include "koneksi.php"; 
+?>
+
+<!DOCTYPE   html   PUBLIC   "-//W3C//DTD   XHTML   1.0   Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta   http-equiv="content-type"   content="text/html;   charset=utf8" /> 
+<title>Untitled Document</title> 
+</head> 
+
+<body> 
+<table width="100%" border="1"> 
+  <tr> 
+    <td width="3%" bgcolor="#0000FF">No</td> 
+    <td width="40%" bgcolor="#0000FF">Nama Barang</td> 
+    <td width="15%" bgcolor="#0000FF">Harga</td> 
+    <td width="14%" bgcolor="#0000FF">Stok</td> 
+    <td width="20%" bgcolor="#0000FF">Gambar</td> 
+    <td colspan="2" bgcolor="#0000FF">Action</td> 
+  </tr> 
+
+  <?php 
+  //Menampilkan data ke tabel 
+  $no=1; 
+  $sqltampil="select * from tbbarang"; 
+  $qrytampil=mysqli_query($koneksi, $sqltampil); 
+  while ($databarang=mysqli_fetch_array($qrytampil)) { 
+  ?> 
+
+  <tr> 
+    <td><?php echo $no; ?></td> 
+    <td><?php echo $databarang['nama_barang']; ?></td> 
+    <td><?php echo $databarang['harga']; ?></td> 
+    <td><?php echo $databarang['stok']; ?></td> 
+    <td><img name="" src="<?php echo $databarang['gambar']; ?>" width="54" height="53" alt=""></td> 
+    <td width="4%">&nbsp;</td> 
+    <td width="4%">&nbsp;</td> 
+  </tr> 
+
+  <?php 
+  $no++; 
+  } 
+  mysqli_free_result($qrytampil); 
+  mysqli_close($koneksi); 
+  ?> 
+</table> 
+</body> 
+</html>

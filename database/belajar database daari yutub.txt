@@ -1,0 +1,130 @@
+zSQL merupakan akronim / singkatan dari  Structured Query Language,
+
+
+
+fungsi sql =  sebagai bahasa khusus dalam mengakses dan mengelola data-data yang ada di dalam sebuah basis data relasional./ relasional data = untuk meyimpan dan menyediakan data yang saling berkaitan
+
+
+
+
+
+//1.
+
+cara msuk ke database mysql melalui cmd  masuk ke folder xampp
+
+dengan cara cd xampp- cd bin- mysql.exe -u root
+
+lalu ,  SHOW databases;
+
+
+
+
+
+cara melihat databse
+
+
+cd xampp
+cd mysql
+cd bin
+mysql.exe -u root 
+SHOW databases;   = untuk memastikan database kita sudah terbuat
+
+cara menambahkan data file database
+ 
+//disini sudah masuk ke management database nya//
+//2.
+
+
+
+CREATE database toko;
+
+=untuk membuat folder dan nama nya yang di ujung kalimat  itu sebelum titik 2  itu bebas mau dikasih nama apa
+
+
+
+//3. USE  toko;  =  harus dimasukan use  atau folder yang sudah kita buat tadi
+
+klau tidak maka akan terjadi ya eror
+
+kalau sudah terjadi eror maka ketik 
+
+(CREATE DATABASE IF NOT EXISTS  toko; 
+
+
+
+
+
+
+//cara mengahapus database nya 
+
+DROP DATABASE toko;
+
+
+
+*//4.cara membuat table menggunakan sintax #sql  
+
+// kita akan membuat table pertama kita menggunakan sql
+
+
+-> satuanid INT NOT NULL AUTO_INCREMENT,
+-> satuanNama VARCHAR( 30) NOT NULL,
+->PRIMARY KEY (satuanid)
+-> );
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE satuan (     lalu enter fungsi nya agar kita bisa tetap menyambung queri kita di clien selanjut nya
+
+buat nama nama kolom nya setelah dienter
+
+
+
+-> satuanid INT NOT NULL  AUTO_INCREMENT,               // berikan id satuan id dengan tipe data integer ,dia tidak boleh null  <nlladalah nilai yang tidak tersedia>v  , auto increment = ketika kita memasukan data ke satuan table ini maka nilai nya akan incremental atau otomatis supaya tidak susah susah mengingat id ny brp sih tapi id nya langsung muncul otomatis
+
+
+contoH incremental = insert pertama 1 dia akan ber lanjut 2,3,4,5 secara automatis jadi ga usah inget id yang terrahir dll jadi kita tinggal memasukan data TDK  harus memprofit
+
+-> satuanNama VARCHAR( 30) NOT NULL, =UNTUK MENAMBAHKAN STRING / TYPE DATA TEKS, da disini harus memaksimal kan karaktek disana kita pakai 30 karakter
+
+-> PRIMARY KEY (satuanid)            //perimary key adalah deskripsi nya ke (satuanid)
+
+-> );
+
+
+
+lanjut
+
+SHOW TABLES;      = untuk melihat table satuan nya
+
+
+DESCRIBE satuan;   = untuk melihat apakah table yang kita buat sudah benar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
